@@ -1,0 +1,37 @@
+{
+  "name": "matrix-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "engines": {
+    "node": "24.x"
+  },
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "typecheck": "tsc --noEmit",
+    "admin:setup": "node scripts/admin-setup.mjs"
+  },
+  "dependencies": {
+    "@fontsource-variable/jetbrains-mono": "^5.3.0",
+    "@libsql/client": "^0.18.0",
+    "@tailwindcss/postcss": "^4.3.4",
+    "lucide-react": "^1.68.0",
+    "motion": "^14.9.1",
+    "next": "16.4.5",
+    "postcss": "^8.5.32",
+    "react": "19.3.1",
+    "react-dom": "19.3.1",
+    "tailwindcss": "^4.3.4",
+    "zod": "^4.6.7"
+  },
+  "devDependencies": {
+    "@types/node": "^24",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.4.5",
+    "typescript": "^5.9.3"
+  }
+}

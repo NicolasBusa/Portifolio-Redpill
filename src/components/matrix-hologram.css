@@ -1,0 +1,79 @@
+.matrix-hologram {
+  position: relative;
+  isolation: isolate;
+  width: 100%;
+  min-width: 0;
+  background:
+    radial-gradient(ellipse at 56% 64%, #0c301f66 0%, #04110955 46%, transparent 78%),
+    #020805a6;
+  border: 1px solid #244d34a6;
+}
+.matrix-hologram::after {
+  position: absolute;
+  z-index: 2;
+  inset: -1px;
+  content: "";
+  pointer-events: none;
+  background:
+    linear-gradient(#469e61,#469e61) top left / 15px 1px,
+    linear-gradient(#469e61,#469e61) top left / 1px 15px,
+    linear-gradient(#469e61,#469e61) top right / 15px 1px,
+    linear-gradient(#469e61,#469e61) top right / 1px 15px,
+    linear-gradient(#469e61,#469e61) bottom left / 15px 1px,
+    linear-gradient(#469e61,#469e61) bottom left / 1px 15px,
+    linear-gradient(#469e61,#469e61) bottom right / 15px 1px,
+    linear-gradient(#469e61,#469e61) bottom right / 1px 15px;
+  background-repeat: no-repeat;
+}
+.hologram-stage { position: relative; aspect-ratio: 16 / 9; }
+.hologram-stage::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: radial-gradient(#578b6a66 .6px, transparent .7px) 0 0 / 18px 18px;
+  mask-image: radial-gradient(ellipse at 54% 53%, #000 10%, transparent 76%);
+  pointer-events: none;
+}
+.hologram-canvas { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
+.hologram-video { position: absolute; width: 1px; height: 1px; opacity: 0; pointer-events: none; }
+.hologram-message {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  translate: -50% -50%;
+  color: #a2c6ad;
+  font: 500 .67rem/1.45 'JetBrains Mono Variable', monospace;
+  text-align: center;
+  width: max-content;
+  max-width: 85%;
+}
+.hologram-controls {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  gap: .3rem;
+  padding: .55rem .75rem;
+  border-top: 1px solid #23422c99;
+  background: #020a05;
+}
+.hologram-decode {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-height: 42px;
+  padding: .25rem .85rem;
+  color: #c2e9ce;
+  font: 600 .68rem/1.1 'JetBrains Mono Variable', monospace;
+  text-transform: uppercase;
+  letter-spacing: .12em;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.hologram-decode svg { color: #00dc42; }
+.hologram-decode i { width: 4px; height: 9px; background: #00ff41; }
+.hologram-decode:not(:disabled):hover { color: #00ff41; background: #003b1840; }
+.hologram-decode:disabled { opacity: .65; cursor: default; }
+.matrix-hologram[data-phase="decoding"] .hologram-decode i { animation: matrixBlink .7s step-end infinite; }
+.hologram-status { color: #a2c6ad; font: 500 .65rem/1.4 'JetBrains Mono Variable', monospace; text-align: center; }
